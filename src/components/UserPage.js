@@ -49,7 +49,7 @@ export default function UserPage() {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, );
 
   const handleClick = (e) => {
     setReadOnly(false);

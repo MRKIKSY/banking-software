@@ -25,7 +25,7 @@ export default function ViewTransactions() {
 
   useEffect(() => {
     transactions();
-  }, []);
+  }, );
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
@@ -67,14 +67,14 @@ export default function ViewTransactions() {
 }
 
 const TableDatas = ({ data, filter }) => {
-  return filter == data.transactionType ? (
+  return filter === data.transactionType ? (
     <tr>
       <th scope="row">{data.transactionId}</th>
       <td>{data.transactionDate}</td>
       <td>{data.transactionType}</td>
       <td
         style={
-          data.transactionType == "credit"
+          data.transactionType === "credit"
             ? { backgroundColor: "#ccffcc" }
             : { backgroundColor: "#ffaaaa" }
         }
@@ -82,14 +82,14 @@ const TableDatas = ({ data, filter }) => {
         {data.transactionAmount}
       </td>
     </tr>
-  ) : filter == "none" ? (
+  ) : filter === "none" ? (
     <tr>
       <th scope="row">{data.transactionId}</th>
       <td>{data.transactionDate}</td>
       <td>{data.transactionType}</td>
       <td
         style={
-          data.transactionType == "credit"
+          data.transactionType === "credit"
             ? { backgroundColor: "#ccffcc" }
             : { backgroundColor: "#ffaaaa" }
         }
