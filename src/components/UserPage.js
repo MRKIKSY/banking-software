@@ -2,10 +2,13 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+
 export default function UserPage() {
   const url = "http://localhost:3000/users";
+  
 
   let navigate = useNavigate();
+  
 
   const { index } = useParams();
 
@@ -161,7 +164,7 @@ export default function UserPage() {
               </label>
               <div className="input-group">
                 <span className="input-group-text" id="basic-addon1">
-                  +91
+                  +234
                 </span>
                 <input
                   type="number"
@@ -190,10 +193,10 @@ export default function UserPage() {
               value={user.accountType}
             >
               <option value="current" disabled={readOnly}>
-                Current
+                Beginners Class
               </option>
               <option value="savings" disabled={readOnly}>
-                Savings
+                Advanced Class
               </option>
             </select>
           </div>
@@ -202,14 +205,22 @@ export default function UserPage() {
             <Link
               type="button"
               className="btn btn-outline-info"
-              to={`/transactions/${index}`}
+              // to={`/transactions/${index}`}
             >
-              View Transactions
+              View Exam Results
+            </Link>
+         
+            <Link
+              type="button"
+              className="btn btn-outline-info"
+              to= {`/lessonpage/${index}`}
+            >
+              Lesson page
             </Link>
             <button
               type="button"
               className="btn btn-outline-danger"
-              onClick={handleDelete}
+              // onClick={handleDelete}
             >
               Delete account
             </button>
